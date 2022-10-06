@@ -1,1 +1,1 @@
-web: node index.js --bind :$PORT
+worker: node index.js

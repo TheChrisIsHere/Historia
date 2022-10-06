@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { MessageEmbed } = require('discord.js')
+const { EmbedBuilder } = require('discord.js')
 const chalk = require('chalk')
 module.exports = (client, path) => {
     //Load Commands
@@ -7,10 +7,10 @@ module.exports = (client, path) => {
     for (folder of CommandsFolder)
     {
         let commandCategory = fs.readdirSync(`${path}/commands/${folder}`).filter(file => file.endsWith('.js'))
-        let embed = new MessageEmbed()
+        let embed = new EmbedBuilder()
         .setTitle(`Help Menu!!`);
 
-        let oldEmbed = new MessageEmbed()
+        let oldEmbed = new EmbedBuilder()
         .setTitle(`Help Menu!!`);
 
         let i = 0;

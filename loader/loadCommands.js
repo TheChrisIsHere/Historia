@@ -14,9 +14,12 @@ module.exports = (client, path) => {
             client.commands.set(command.name, command)
             if(command.aliases) 
             {
-                command.aliases.forEach(aliase => {
-                    client.aliases.set(aliase, command.name)
-                });
+                for (let i = 0; i < command.aliases.length; i++) {
+  client.aliases.set(command.aliases[i], command.name)
+                  console.log(chalk.greenBright(`Loaded ${command.name} as ${command.aliases[i]}`))
+}
+
+              
             }
         }
     }
